@@ -1,0 +1,22 @@
+{
+    "type": "theme",    
+    "name": "Progresive",
+    "description": "Custom theme, simple and light",
+    "license": "GNU General Public License v3.0",
+    "version":"1",
+    "author": "MiX",
+    "homepage": "https://www.machinon.com",
+    "wiki": "",
+    "standby_after": 10,
+    "logo": "domticz_custom.svg",
+    "custom_url": "https://www.domoticz.com",
+    "button_name": "Domoticz",
+    "background_img":"",
+    "background_type":"",
+	"footer_text_disabled": {
+            "id":11,
+            "enabled":true,
+			"files": []
+        }
+    }
+}
