@@ -69,6 +69,18 @@ $(document).ready(function() {
 					$(this).replaceWith('<i class="fa fa-trash lcursor js-delete" aria-hidden="true"></i>');
 				}
 			});
+			/*$('img[src*="/favorite."].lcursor').each(function () {
+				if ($(this).parent('span').length === 0) {
+					$(this).closest('td').addClass('icon favorite');
+					$(this).wrap('<span></span>');
+				}
+			});
+			$('img[src*="/nofavorite."].lcursor').each(function () {
+				if ($(this).parent('span').length === 0) {
+					$(this).closest('td').addClass('icon nofavorite');
+					$(this).wrap('<span></span>');
+				}
+			});*/
 		//}
 		//if ($('input.js-select-row').lenght) {
 			$('input.js-select-row').each(function () {

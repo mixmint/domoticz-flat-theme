@@ -915,10 +915,10 @@ th.ui-state-default {
 	border: unset !important;
 }
 .fg-toolbar select {
-	margin-left: 5px;
+	margin-left: 10px;
 }
 .fg-toolbar .dataTables_filter input {
-	margin-left: 4px;
+	margin-left: 8px;
 }
 .fg-toolbar .dataTables_length,
 .fg-toolbar .dataTables_filter {
@@ -930,6 +930,7 @@ th.ui-state-default {
 	justify-content: start;
 	align-items: center;
 	white-space: pre;
+	word-spacing: -2px;
 }
 .fg-toolbar .dataTables_length label select {
 	order: 1;
@@ -1583,6 +1584,16 @@ body div[class] table[id^="itemtable"] tr td:first-child + td + td + td + td + t
 }
 body div[class] table[id^="itemtable"] tr td.options {
 	padding-left: 25px !important;
+}
+body div[class] table[id^="itemtable"] tr td.options img[src*="/favorite."],
+body div[class] table[id^="itemtable"] tr td.options img[src*="/nofavorite."] {
+	width: 24px;
+	height: 24px;
+	background-color: #fff;
+}
+body div[class] table[id^="itemtable"] tr td.options img[src*="/favorite."]:hover,
+body div[class] table[id^="itemtable"] tr td.options img[src*="/nofavorite."]:hover {
+	background-color: #f26b62;
 }
 body div[class] table[id^="itemtable"] tr td#lastupdate:before,
 body div[class] table[id^="itemtable"] tr td#type:before {
