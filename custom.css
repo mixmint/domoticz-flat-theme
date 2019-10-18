@@ -65,6 +65,7 @@ td#bigtext img[src*="arrow"] + span:before,
 .dataTable img[src*="battery"] + span:before,
 .dataTable img[src*="air_signal"] + span:before,
 .ui-button .ui-icon.ui-icon-closethick:before,
+.bootbox .bootbox-close-button:before,
 .dataTable tbody tr td .label-info:before,
 .dataTable tbody tr td .badge-info:before,
 .dataTable tbody tr td .label-info[href]:before,
@@ -85,6 +86,9 @@ td#bigtext img[src*="arrow"] + span:before,
 	background-color: unset;
 	border-top: unset;
 	border-bottom: unset;
+}
+.bootbox .bootbox-close-button {
+	opacity: 1 !important;
 }
 .dataTables_wrapper {
 	margin-bottom: 16px;
@@ -108,7 +112,9 @@ textarea[class]:focus {
 }
 input:not([class*="blockly"]),
 tr.odd,
-tr.even {
+tr.even,
+tr.odd td.sorting_1,
+tr.even td.sorting_1 {
 	background-color: unset !important;
 }
 tr.odd,
@@ -291,7 +297,8 @@ input[type="checkbox"][class]:checked + span:after {
 	text-shadow: unset !important;
 	border-radius: unset !important;
 }
-.ui-corner-all {
+.ui-corner-all,
+.bootbox .bootbox-close-button {
 	text-shadow: unset !important;
 }
 .row,
@@ -914,10 +921,9 @@ table.display tr.odd.row_selected td,
 table.display tr.even.row_selected td {
 	background: #3d4c53;
 }
-table#hardwaretable.display.dataTable tr.odd.row_selected td:not(:nth-child(2)),
-table#hardwaretable.display.dataTable tr.even.row_selected td:not(:nth-child(2)),
-table#devices.display.dataTable tr.odd.row_selected td:not(:nth-child(2)),
-table#devices.display.dataTable tr.even.row_selected td:not(:nth-child(2)) {
+table#hardwaretable.display.dataTable tr.row_selected td:not(:nth-child(2)),
+table#devices.display.dataTable tr.row_selected td:not(:nth-child(2)),
+table#plantable.display.dataTable tr.row_selected td:not(:nth-child(2)) {
 	background-color: #f26b6233;
 }
 table#devices.dataTable tr td input[type="checkbox"][class] + span {
@@ -1014,6 +1020,7 @@ body div[class] table[id^="itemtable"] tr td[id^="img"] img {
 	width: 48px;
 	height: 48px;
 }
+.dataTable tbody tr td.icon,
 .dataTable tbody tr td:nth-child(4) {
 	white-space: pre;
 }
@@ -1067,14 +1074,15 @@ body div[class] table[id^="itemtable"] tr td[id^="img"] img {
 	
 }
 .dataTable .icon i {
-	font-size: 24px;
+	/*font-size: 24px;*/
 }
 .icon i {
 	margin-left: 5px;
 	margin-right: 5px;
 }
 .dataTable .icon a,
-#login {
+#login,
+.bootbox-body {
 	color: #fff;
 }
 .dataTable .icon a:hover {
@@ -1182,9 +1190,11 @@ td.actions-column {
 [class*="btnstyle3"]:hover,
 .ui-dialog .ui-dialog-buttonpane button:hover,
 .ui-button .ui-icon.ui-icon-closethick:hover,
+.bootbox .bootbox-close-button:hover,
 .logcontent .lcursor:hover,
 #submit:hover {
 	background: #3d4c53 !important;
+	outline: none;
 }
 [class*="btnstyle3"],
 [class*="btnstyle3"]:disabled,
@@ -1216,14 +1226,17 @@ td.actions-column {
 .btn-danger[disabled],
 .ui-dialog .ui-dialog-buttonpane button,
 .ui-button .ui-icon.ui-icon-closethick,
+.bootbox .bootbox-close-button,
 .logcontent .lcursor {
 	background: #f26b62;
 }
-.btn.btn-default {
+.btn.btn-default,
+.bootbox .bootbox-close-button:before {
 	color: #fff;
 }
 .ui-icon,
-.logcontent .lcursor {
+.logcontent .lcursor,
+.bootbox .bootbox-close-button {
 	width: 20px;
 	height: 20px;
 }
@@ -1249,6 +1262,7 @@ td.options .btnsmall,
 }
 .ui-button.ui-dialog-titlebar-close,
 .ui-button .ui-icon.ui-icon-closethick,
+.bootbox .bootbox-close-button,
 .logcontent .lcursor b {
 	text-indent: unset !important;
 	font-size: 0;
@@ -1262,7 +1276,8 @@ td.options .btnsmall,
 	padding: 0;
 }
 .ui-button .ui-icon.ui-icon-closethick:before,
-.logcontent .lcursor:before {
+.logcontent .lcursor:before,
+.bootbox .bootbox-close-button:before {
 	content: "\f00d";
 	text-indent: unset !important;
 	font-size: 16px;
@@ -1721,7 +1736,8 @@ td[id^="img"] img[src*="empty"],
 .dataTable tbody tr,
 .dataTable tbody tr[class] {
 	border-bottom: 1px solid #f26b62;
-	background-color: #3d4c53b5 !important;
+/* 	background-color: #3d4c53b5 !important; */
+	background-color: #3d4c53 !important;
 }
 div.events-editor {
 	padding: 0 10px 30px;
@@ -1960,6 +1976,7 @@ div.events-editor-file__content {
 .blocklyTreeRow:not(.blocklyTreeSelected):hover {
 	background-color: #3d4c53;
 }
+.events-editor__search,
 .blocklyTreeLabel {
 	color: #fff;
 }
