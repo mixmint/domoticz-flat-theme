@@ -4,14 +4,6 @@
 @import url("extras_and_animations.css");
 /*@import url("navigation_main_sidebar.css"); /* This transforms the main menu to a vertical menu on the left. */
 
-/*@font-face {
-	font-family: 'FontAwesome';
-	src: url('fonts/fontawesome-webfont.eot?v=4.7.0');
-	src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}*/
-
 body, h1, h2, h3, h4, h5, h6, #copyright p, ul.style6 h3, .balloon, body table#itemtable tbody tr, .mobileitem .btn-mini, .brand h2, .navbar .nav .dropdown-menu, .navbar .nav li a, .navbar .nav .current_page_item > a, .obtext, .obtext2, .accordion li > a, .accordion li > a span, .btn, body table[id^="itemtable"] tbody tr, #login, #submit {
 	font-family: sans-serif !important;
 }
@@ -75,7 +67,8 @@ td#bigtext img[src*="arrow"] + span:before,
 .navbar .nav > li > .dropdown-menu > li > a:before,
 .navbar .nav > li > .dropdown-menu > li > a[id]:before,
 .navbar .nav > li > .dropdown-menu > li > .dropdown-menu > li > a:before,
-.navbar .nav > li > .dropdown-menu > li > .dropdown-menu > li > a[id]:before {
+.navbar .nav > li > .dropdown-menu > li > .dropdown-menu > li > a[id]:before,
+.gz-back-to-top:before {
 	font-family:"FontAwesome";
 }
 #hardwarecontent > div:not(.page-header-small):not(.bannav):not(#bannav), #hardwarecontent > table:not(.page-header-small):not(.bannav):not(#bannav), #hardwarecontent #ipnodeparamstable, #nodeparamstable, #utilitycontent #notificationparamstable, #plancontent #activeparamstable, #usercontent #userparamstable, #cameracontent #activeparamstable, #hardwarecontent #hardwareparamstable, #lightcontent #paramstable:not(:nth-of-type(1)):not(:nth-of-type(2)), #scenecontent #paramstable:not(:nth-of-type(1)):not(:nth-of-type(2)), #weathercontent #notificationparamstable, #lightcontent #timerparamstable, #tempnotifications #notificationparamstable, #lightcontent #notificationparamstable, #scenecontent #timerparamstable, #notificationtable:not(.dataTable), #notifications > table, #paramstable, #fibaromain #uservariablesedittable, #customlog, #timerparamstable, #linkparamstable, #influxremote, #linkhttpparamstable, #httpremote, #linkgooglepubsubparamstable, #googlepubsubremote, #fibaromain #linkparamstable, #fibaromain #fibaroremote, #userparamstable, #activeparamstable, #lightcontent paramstable, #scenecontent #paramstable, #notificationparamstable, #hardwareparamstable, #eventparamstable, .events-editor-tree, .events-editor-file__header, .events-editor__editor, .events-editor-file__content-table {
@@ -479,13 +472,34 @@ a.ui-button:active,
 .label-info,
 .badge-info,
 .label-info[href],
-.badge-info[href] {
+.badge-info[href],
+.gz-back-to-top {
 	background-color: #f26b62;
 	color: #3d4c53;
 	background-image: unset;
 	background-repeat: unset;
 	background-position: unset;
 	border: unset;
+}
+.gz-back-to-top {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	opacity: 1;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+.gz-back-to-top:before {
+	content: "\f062";
+	font-size: 18px;
+}
+.gz-back-to-top:hover {
+	background-color: #3d4c53;
+}
+.gz-back-to-top:hover:before {
+	color: #f26b62;
 }
 .row-fluid [class^="span"],
 .ui-dialog-titlebar,
