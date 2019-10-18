@@ -1,5 +1,6 @@
 <h1>FLAT theme</h1>
 <p>This is a theme for Domoticz based on the FLATMAG administration panel. It is a theme in darker colors supplemented with its own icons. Adds several improvements to the interface using javascript.</p>
+<img src="screenshot.jpg" />
 <h2>Installing</h2>
 <p>On your Raspberry Pi, go into the Domoticz directory via the terminal:</p>
 <ul>
