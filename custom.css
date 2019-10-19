@@ -563,7 +563,6 @@ a.ui-button:active,
 .row-fluid .span6 {
 	padding: 16px;
 }
-
 body {
 	background-color: #405764 !important;
 	background-image: unset;
@@ -577,7 +576,6 @@ body {
 		-webkit-transform: translateX(46px);
 	}
 }
-
 @keyframes MOVE-BG {
 	from {
 		transform: translateX(0);
@@ -838,7 +836,6 @@ ul.nav-tabs > li.pull-right > a {
 	margin: unset;
 	border-radius: 0;
 }
-
 ul.nav-tabs > li:hover,
 ul.nav-tabs > li > a:hover {
 	cursor: pointer;
@@ -911,7 +908,6 @@ th.ui-state-default {
 #logcontent .sub-tabs li.active a {
 	background: none;
 	border-bottom: unset;
-	
 }
 .sub-tabs-apply {
 	color: unset;
@@ -929,9 +925,6 @@ th.ui-state-default {
 #settingscontent select {
 	width: 100% !important;
 	height: 40px;
-}
-#customlog {
-	
 }
 #customlog table {
 	table-layout: fixed;
@@ -1006,9 +999,6 @@ body div[class] table[id^="itemtable"] tr td[id^="img"] img {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-}
-.dataTable .icon {
-	
 }
 .dataTable .icon i {
 	/*font-size: 24px;*/
@@ -1875,7 +1865,6 @@ div.events-editor-file__content {
 	padding: 0;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	/*height: unset;*/
 }
 .events-editor__file-list {
 	padding-left: unset;
