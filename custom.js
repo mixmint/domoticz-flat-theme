@@ -17,10 +17,12 @@ function partinit() {
 
 $(document).ready(function() {
 	$('#version').append('\
+		<i>\
 		<span></span>\
 		<span></span>\
 		<span></span>\
 		<span></span>\
+		</i>\
 	');
 	/*$('body').prepend('<div id="particles-js"></div>');
 	setTimeout(function(){
