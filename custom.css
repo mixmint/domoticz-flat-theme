@@ -421,14 +421,19 @@ td.options,
 #submit:hover:active {
 	color: #f26b62 !important;
 }
-#login {
+div#login {
 	color: #fff !important;
 	background-color: #405764 !important;
 	-webkit-box-shadow:inset 0px 0px 0px 1px #f26b62;
 	-moz-box-shadow:inset 0px 0px 0px 1px #f26b62;
 	box-shadow:inset 0px 0px 0px 1px #f26b62;
 	padding: 0 !important;
-	height: auto !important;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	height: 280px !important;
 }
 #login h1 {
 	padding: 8px;
