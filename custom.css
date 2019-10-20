@@ -1668,8 +1668,7 @@ td[id^="img"] img[src*="empty"],
 .dataTable tbody tr,
 .dataTable tbody tr[class] {
 	border-bottom: 1px solid #f26b62;
-/* 	background-color: #3d4c53b5 !important; */
-	background-color: #3d4c53 !important;
+	background-color: #3d4c53b5 !important;
 }
 div.events-editor {
 	padding: 0 10px 30px;
