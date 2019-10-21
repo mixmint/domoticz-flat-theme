@@ -155,11 +155,25 @@ textarea[class] {
 }
 select,
 select[class] {
-	background: transparent url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='20' fill='%23FFFFFF'><polygon points='0,0 10,0 5,5'/></svg>") calc(100% - 10px) 100% no-repeat !important;
+	background: #405764 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='20' fill='%23FFFFFF'><polygon points='0,0 10,0 5,5'/></svg>") calc(100% - 10px) 100% no-repeat !important;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
+	padding: 5px 0 5px 5px !important;
+}
+select option {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+}
+select option:active,
+select option:focus,
+select option:hover {
+	background-color: #f26b62 !important;
 }
 #customlog table tr td {
 	vertical-align: top;
@@ -383,6 +397,9 @@ td.options,
 	background-image: unset;
 	background-attachment: unset;
 	border-radius: unset;
+}
+select option {
+	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='%233d4c53'><rect x='0' y='0' width='100%' height='100%' /></svg>") 0 0 repeat !important;
 }
 .modal,
 .modal-header {
@@ -1606,12 +1623,11 @@ body div[class] table[id^="itemtable"] tr td#name {
 }
 body div[class] table[id^="itemtable"] tr td#bigtext {
 	justify-content: end;
-	float: none !important;
+	/*float: none !important;*/
 	background: none !important;
 	max-width: 25%;
 	padding-right: 10px;
 	font-size: 14px !important;
-
 	margin: -1.95em 0 0 auto !important;
 }
 td#lastupdate:before {

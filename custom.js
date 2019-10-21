@@ -10,7 +10,7 @@ $.getMultiScripts = function(arr, path) {
 
 function partinit() {
 	var jsfiles = ['particles.min.js','particles-settings.js'];
-	$.getMultiScripts(jsfiles, 'acttheme/js/').done(function() {
+	$.when($.getMultiScripts(jsfiles, 'acttheme/js/')).done(function() {
 		console.log('Particle loaded');
 	});
 }
@@ -28,6 +28,7 @@ $(document).ready(function() {
 	setTimeout(function(){
 		partinit();
 	},500);*/
+	
 	$('body').on('DOMSubtreeModified',function () {
 		$('#devicecontainer input[type="checkbox"]').each(function () {
 			if ($(this).next('span').length === 0) {
