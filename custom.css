@@ -1,5 +1,6 @@
 @import url("../css/legacy.css");
 @import url("css/font-awesome.min.css");
+@import url("css/selectize.css");
 @import url("base.css");
 @import url("extras_and_animations.css");
 /*@import url("navigation_main_sidebar.css"); /* This transforms the main menu to a vertical menu on the left. */
@@ -170,10 +171,13 @@ select option {
 	-ms-appearance: none;
 	appearance: none;
 }
+select option {
+	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='%233d4c53'><rect x='0' y='0' width='100%' height='100%' /></svg>") 0 0 repeat !important;
+}
 select option:active,
 select option:focus,
 select option:hover {
-	background-color: #f26b62 !important;
+	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='%23f26b62'><rect x='0' y='0' width='100%' height='100%' /></svg>") 0 0 repeat !important;
 }
 #customlog table tr td {
 	vertical-align: top;
@@ -398,9 +402,6 @@ td.options,
 	background-attachment: unset;
 	border-radius: unset;
 }
-select option {
-	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='%233d4c53'><rect x='0' y='0' width='100%' height='100%' /></svg>") 0 0 repeat !important;
-}
 .modal,
 .modal-header {
 	border: unset;
@@ -500,6 +501,13 @@ div#login {
 }
 #login #inputs input[type="password"] {
 	background: rgba(61, 76, 83, 1) url(images/password2.svg) no-repeat 0 0 / contain !important;
+}
+.ui-button {
+	padding: .4em 0 .4em .4em;
+}
+#getlatlong {
+	color: #eee;
+	font-weight: bold;
 }
 div:not(.ui-slider) .ui-state-active:not(.ui-slider-handle),
 .ui-widget-content:not(.ui-slider) .ui-state-active:not(.ui-slider-handle),
@@ -1074,7 +1082,8 @@ td.actions-column {
 .ui-dialog .ui-dialog-buttonpane button,
 #logcontent .nav-tabs > .active > a,
 #logcontent .nav-tabs > .active > a:hover,
-#logcontent .nav-tabs > .active > a:focus {
+#logcontent .nav-tabs > .active > a:focus,
+#getlatlong {
 	border: none;
 	border-radius: unset;
 	padding: 8px 12px;
@@ -1106,7 +1115,8 @@ td.actions-column {
 .ui-dialog .ui-dialog-buttonpane button,
 .ui-button .ui-icon.ui-icon-closethick,
 .ui-button.ui-dialog-titlebar-close,
-.ui-button.ui-dialog-titlebar-close:hover {
+.ui-button.ui-dialog-titlebar-close:hover,
+#getlatlong {
 	background-image: unset !important;
 	background-position: unset;
 	background-repeat: no-repeat;
@@ -1141,7 +1151,8 @@ td.actions-column {
 .ui-button .ui-icon.ui-icon-closethick:hover,
 .bootbox .bootbox-close-button:hover,
 .logcontent .lcursor:hover,
-#submit:hover {
+#submit:hover,
+#getlatlong:hover {
 	background: #3d4c53 !important;
 	outline: none;
 }
@@ -1176,7 +1187,8 @@ td.actions-column {
 .ui-dialog .ui-dialog-buttonpane button,
 .ui-button .ui-icon.ui-icon-closethick,
 .bootbox .bootbox-close-button,
-.logcontent .lcursor {
+.logcontent .lcursor,
+#getlatlong {
 	background: #f26b62;
 }
 .btn.btn-default,
