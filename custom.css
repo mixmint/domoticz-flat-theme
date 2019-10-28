@@ -100,7 +100,9 @@ table.display td {
 }
 .ui-dialog table.display tr td input:not([type="radio"]):not([type="checkbox"]),
 .ui-dialog table.display tr td select,
-.ui-dialog table.display tr td textarea {
+.ui-dialog table.display tr td textarea,
+.ui-dialog .ui-dialog-content table tr td input:not([type="radio"]):not([type="checkbox"]),
+.ui-dialog .ui-dialog-content table tr td textarea {
 	width: 100% !important;
 }
 input:focus,
@@ -161,7 +163,6 @@ select[class] {
 	-moz-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
-	padding: 5px 0 5px 5px !important;
 }
 select option {
 	padding-top: 5px;
@@ -218,11 +219,15 @@ input[id][class]:not([type="checkbox"]):not([type="radio"]) {
 	color: #fff;
 }
 input[type="checkbox"][class],
-input[type="checkbox"]:not(.noscheck) {
-	visibility: hidden;
+input[type="checkbox"]:not(.noscheck),
+input[type="radio"]:not(old) {
+	opacity: 0;
 	font-size: 0;
 	line-height: 0;
 	position: absolute;
+}
+input[type="radio"]:not(old) {
+	position: static;
 }
 input[type="checkbox"][class] + span {
 	display: inline-block;
@@ -304,6 +309,39 @@ input[type="checkbox"][class]:checked + span:after {
 }
 input[type="checkbox"][class]:checked + span:after {
 	left: 20px;
+}
+input[type="radio"]:not(old) + label,
+input[type="radio"]:not(old) + span {
+	position: relative;
+}
+input[type="radio"]:not(old) + label:before,
+input[type="radio"]:not(old) + label:after,
+input[type="radio"]:not(old) + span:before,
+input[type="radio"]:not(old) + span:after {
+	content: "";
+	position: absolute;
+	height: 18px;
+	width: 18px;
+	left: -22px;
+	border-radius: 50%;
+	background: #3d4c53;
+	z-index: -1;
+}
+input[type="radio"]:not(old) + label:after,
+input[type="radio"]:not(old) + span:after {
+	height: 6px;
+	width: 6px;
+	left: -16px;
+	top: 6px;
+	background: #f26b62;
+}
+input[type="radio"]:not(old):checked + label:before,
+input[type="radio"]:not(old):checked + span:before {
+	background: #f26b62;
+}
+input[type="radio"]:not(old):checked + label:after,
+input[type="radio"]:not(old):checked + span:after {
+	background: #3d4c53;
 }
 .item section {
 	height: 100%;

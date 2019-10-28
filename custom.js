@@ -16,21 +16,8 @@ function partinit() {
 }
 
 $(document).ready(function() {
-	$('#version').append('\
-		<i>\
-		<span></span>\
-		<span></span>\
-		<span></span>\
-		<span></span>\
-		</i>\
-	');
-	/*$('body').prepend('<div id="particles-js"></div>');
-	setTimeout(function(){
-		partinit();
-	},500);*/
-	
 	$('body').on('DOMSubtreeModified',function () {
-		$('#devicecontainer input[type="checkbox"]').each(function () {
+		$('#devicecontainer input[type="checkbox"],img[src*="/rename."].lcursor[class*="js-"]').each(function () {
 			if ($(this).next('span').length === 0) {
 				$('#devicecontainer').contents().filter(function(){return this.nodeType !== 1;}).wrap('<span></span>');
 			}
@@ -47,6 +34,18 @@ $(document).ready(function() {
 				$(this).replaceWith('<i class="fa fa-minus" aria-hidden="true"></i>');
 			}
 		});
+		$('#plantable img[src*="/down."].lcursor:not([class*="js-"])').each(function () {
+			if ($(this).next('i').length === 0) {
+				$(this).closest('td').addClass('icon');
+				$(this).replaceWith('<i class="fa fa-arrow-down lcursor" aria-hidden="true"></i>');
+			}
+		});
+		$('#plantable img[src*="/up."].lcursor:not([class*="js-"])').each(function () {
+			if ($(this).next('i').length === 0) {
+				$(this).closest('td').addClass('icon');
+				$(this).replaceWith('<i class="fa fa-arrow-up lcursor" aria-hidden="true"></i>');
+			}
+		});
 		$('img[src*="/down."].lcursor[class*="js-"]').each(function () {
 			if ($(this).next('i').length === 0) {
 				$(this).closest('td').addClass('icon');
@@ -57,18 +56,6 @@ $(document).ready(function() {
 			if ($(this).next('i').length === 0) {
 				$(this).closest('td').addClass('icon');
 				$(this).replaceWith('<i class="fa fa-arrow-up lcursor js-order-up" aria-hidden="true"></i>');
-			}
-		});
-		$('#plantable img[src*="/down."].lcursor').each(function () {
-			if ($(this).next('i').length === 0) {
-				$(this).closest('td').addClass('icon');
-				$(this).replaceWith('<i class="fa fa-arrow-down lcursor" aria-hidden="true"></i>');
-			}
-		});
-		$('#plantable img[src*="/up."].lcursor').each(function () {
-			if ($(this).next('i').length === 0) {
-				$(this).closest('td').addClass('icon');
-				$(this).replaceWith('<i class="fa fa-arrow-up lcursor" aria-hidden="true"></i>');
 			}
 		});
 		$('img[src*="/rename."].lcursor[class*="js-"]').each(function () {
