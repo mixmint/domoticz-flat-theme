@@ -14,66 +14,81 @@ function partinit() {
 		console.log('Particle loaded');
 	});
 }
+var whatToObserve = {childList: true, attributes: true, subtree: true, attributeOldValue: true, attributeFilter: ['class', 'style']};
+var mutationObserver = new MutationObserver(function(mutationRecords) {
+	$.each(mutationRecords, function(index, mutationRecord) {
+		if (mutationRecord.type === 'childList') {
+			if (mutationRecord.addedNodes.length > 0) {
+				$('#devicecontainer input[type="checkbox"],img[src*="/rename."].lcursor[class*="js-"]').each(function () {
+					if ($(this).next('span').length === 0) {
+						$('#devicecontainer').contents().filter(function(){return this.nodeType !== 1;}).wrap('<span></span>');
+					}
+				});
+				$('img[src*="/next."]').each(function () {
+					if ($(this).next('i').length === 0) {
+						$(this).closest('td').addClass('icon');
+						$(this).replaceWith('<i class="fa fa-arrow-circle-right" aria-hidden="true"></i>');
+					}
+				});
+				$('img[src*="/equal."]').each(function () {
+					if ($(this).next('i').length === 0) {
+						$(this).closest('td').addClass('icon');
+						$(this).replaceWith('<i class="fa fa-minus" aria-hidden="true"></i>');
+					}
+				});
+				$('#plantable img[src*="/down."].lcursor:not([class*="js-"])').each(function () {
+					if ($(this).next('i').length === 0) {
+						$(this).closest('td').addClass('icon');
+						$(this).replaceWith('<i class="fa fa-arrow-down lcursor" aria-hidden="true"></i>');
+					}
+				});
+				$('#plantable img[src*="/up."].lcursor:not([class*="js-"])').each(function () {
+					if ($(this).next('i').length === 0) {
+						$(this).closest('td').addClass('icon');
+						$(this).replaceWith('<i class="fa fa-arrow-up lcursor" aria-hidden="true"></i>');
+					}
+				});
+				$('img[src*="/down."].lcursor[class*="js-"]').each(function () {
+					if ($(this).next('i').length === 0) {
+						$(this).closest('td').addClass('icon');
+						$(this).replaceWith('<i class="fa fa-arrow-down lcursor js-order-down" aria-hidden="true"></i>');
+					}
+				});
+				$('img[src*="/up."].lcursor[class*="js-"]').each(function () {
+					if ($(this).next('i').length === 0) {
+						$(this).closest('td').addClass('icon');
+						$(this).replaceWith('<i class="fa fa-arrow-up lcursor js-order-up" aria-hidden="true"></i>');
+					}
+				});
+				$('img[src*="/rename."].lcursor[class*="js-"]').each(function () {
+					if ($(this).next('i').length === 0) {
+						$(this).closest('td').addClass('icon');
+						$(this).replaceWith('<i class="fa fa-pencil-square-o lcursor js-update" aria-hidden="true"></i>');
+					}
+				});
+				$('img[src*="/delete."].lcursor[class*="js-"]').each(function () {
+					if ($(this).next('i').length === 0) {
+						$(this).closest('td').addClass('icon');
+						$(this).replaceWith('<i class="fa fa-trash lcursor js-delete" aria-hidden="true"></i>');
+					}
+				});
+				$('input.js-select-row').each(function () {
+					if ($(this).next('span').length === 0) {
+						$(this).parent().append('<span></span>');
+					}
+				});
+			} else if (mutationRecord.removedNodes.length > 0) {
+				//console.log('DOM node removed, do something');
+			}
+		} else if (mutationRecord.type === 'attributes') {
+			if (mutationRecord.attributeName === 'class') {
+				//console.log('class changed, do something');
+			}
+		}
+	});
+});
+
 
 $(document).ready(function() {
-	$('body').on('DOMSubtreeModified',function () {
-		$('#devicecontainer input[type="checkbox"],img[src*="/rename."].lcursor[class*="js-"]').each(function () {
-			if ($(this).next('span').length === 0) {
-				$('#devicecontainer').contents().filter(function(){return this.nodeType !== 1;}).wrap('<span></span>');
-			}
-		});
-		$('img[src*="/next."]').each(function () {
-			if ($(this).next('i').length === 0) {
-				$(this).closest('td').addClass('icon');
-				$(this).replaceWith('<i class="fa fa-arrow-circle-right" aria-hidden="true"></i>');
-			}
-		});
-		$('img[src*="/equal."]').each(function () {
-			if ($(this).next('i').length === 0) {
-				$(this).closest('td').addClass('icon');
-				$(this).replaceWith('<i class="fa fa-minus" aria-hidden="true"></i>');
-			}
-		});
-		$('#plantable img[src*="/down."].lcursor:not([class*="js-"])').each(function () {
-			if ($(this).next('i').length === 0) {
-				$(this).closest('td').addClass('icon');
-				$(this).replaceWith('<i class="fa fa-arrow-down lcursor" aria-hidden="true"></i>');
-			}
-		});
-		$('#plantable img[src*="/up."].lcursor:not([class*="js-"])').each(function () {
-			if ($(this).next('i').length === 0) {
-				$(this).closest('td').addClass('icon');
-				$(this).replaceWith('<i class="fa fa-arrow-up lcursor" aria-hidden="true"></i>');
-			}
-		});
-		$('img[src*="/down."].lcursor[class*="js-"]').each(function () {
-			if ($(this).next('i').length === 0) {
-				$(this).closest('td').addClass('icon');
-				$(this).replaceWith('<i class="fa fa-arrow-down lcursor js-order-down" aria-hidden="true"></i>');
-			}
-		});
-		$('img[src*="/up."].lcursor[class*="js-"]').each(function () {
-			if ($(this).next('i').length === 0) {
-				$(this).closest('td').addClass('icon');
-				$(this).replaceWith('<i class="fa fa-arrow-up lcursor js-order-up" aria-hidden="true"></i>');
-			}
-		});
-		$('img[src*="/rename."].lcursor[class*="js-"]').each(function () {
-			if ($(this).next('i').length === 0) {
-				$(this).closest('td').addClass('icon');
-				$(this).replaceWith('<i class="fa fa-pencil-square-o lcursor js-update" aria-hidden="true"></i>');
-			}
-		});
-		$('img[src*="/delete."].lcursor[class*="js-"]').each(function () {
-			if ($(this).next('i').length === 0) {
-				$(this).closest('td').addClass('icon');
-				$(this).replaceWith('<i class="fa fa-trash lcursor js-delete" aria-hidden="true"></i>');
-			}
-		});
-		$('input.js-select-row').each(function () {
-			if ($(this).next('span').length === 0) {
-				$(this).parent().append('<span></span>');
-			}
-		});
-	});
+	mutationObserver.observe(document.body, whatToObserve);
 });
