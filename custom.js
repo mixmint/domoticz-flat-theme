@@ -81,7 +81,7 @@ var mutationObserver = new MutationObserver(function(mutationRecords) {
 						$(this).replaceWith('<i class="fa fa-trash lcursor js-delete" aria-hidden="true"></i>');
 					}
 				});
-				$('table:not(#tempwidgets) td#bigtext').each(function () {
+				$('table:not(#itemtablenotype) td#bigtext').each(function () {
 					if ($(this).not('.marquee') && getWidth($(this).text()) + 10 > getWidth($(this))) {
 						if ($(this).children('span').length === 0) {
 							$(this).contents().filter(function(){return this.nodeType !== 1;}).wrap('<span style="padding-left: calc(100% + ' + getWidth($(this).text()) + 'px); margin-right: -' + 2 * getWidth($(this).text()) + 'px;"></span>');
