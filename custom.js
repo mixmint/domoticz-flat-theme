@@ -87,7 +87,7 @@ var mutationObserver = new MutationObserver(function(mutationRecords) {
 					}
 				});
 				$('td#bigtext').each(function () {
-					if ($(this).not('.marquee') && getWidth($(this).text()) > getWidth($(this))) {
+					if ($(this).not('.marquee') && getWidth($(this).text()) + 10 > getWidth($(this))) {
 						$(this).contents().filter(function(){return this.nodeType !== 1;}).wrap('<span style="padding-left: calc(100% + ' + getWidth($(this).text()) + 'px); margin-right: -' + 2 * getWidth($(this).text()) + 'px;"></span>')
 						$(this).addClass('marquee');
 					}
