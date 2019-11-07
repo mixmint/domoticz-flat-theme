@@ -81,15 +81,19 @@ var mutationObserver = new MutationObserver(function(mutationRecords) {
 						$(this).replaceWith('<i class="fa fa-trash lcursor js-delete" aria-hidden="true"></i>');
 					}
 				});
+				$('table:not(#tempwidgets) td#bigtext').each(function () {
+					if ($(this).not('.marquee') && getWidth($(this).text()) + 10 > getWidth($(this))) {
+						if ($(this).children('span').length === 0) {
+							$(this).contents().filter(function(){return this.nodeType !== 1;}).wrap('<span style="padding-left: calc(100% + ' + getWidth($(this).text()) + 'px); margin-right: -' + 2 * getWidth($(this).text()) + 'px;"></span>');
+						} else {
+							$(this).children('span').attr('style','padding-left: calc(100% + ' + getWidth($(this).text()) + 'px); margin-right: -' + 2 * getWidth($(this).text()) + 'px;');
+						}
+						$(this).addClass('marquee');
+					}
+				});
 				$('input.js-select-row').each(function () {
 					if ($(this).next('span').length === 0) {
 						$(this).parent().append('<span></span>');
-					}
-				});
-				$('[id^="itemtable"] td#bigtext').each(function () {
-					if ($(this).not('.marquee') && getWidth($(this).text()) + 10 > getWidth($(this))) {
-						$(this).contents().filter(function(){return this.nodeType !== 1;}).wrap('<span style="padding-left: calc(100% + ' + getWidth($(this).text()) + 'px); margin-right: -' + 2 * getWidth($(this).text()) + 'px;"></span>')
-						$(this).addClass('marquee');
 					}
 				});
 			} else if (mutationRecord.removedNodes.length > 0) {
