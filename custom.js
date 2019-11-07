@@ -14,6 +14,15 @@ function partinit() {
 		console.log('Particle loaded');
 	});
 }
+function getWidth(txt, fontname, fontsize){
+    if(getWidth.c === undefined){
+        getWidth.c=document.createElement('canvas');
+        getWidth.ctx=getWidth.c.getContext('2d');
+    }
+    getWidth.ctx.font = fontsize + ' ' + fontname;
+    return getWidth.ctx.measureText(txt).width;
+}
+
 var whatToObserve = {childList: true, attributes: true, subtree: true, attributeOldValue: true, attributeFilter: ['class', 'style']};
 var mutationObserver = new MutationObserver(function(mutationRecords) {
 	$.each(mutationRecords, function(index, mutationRecord) {
@@ -77,6 +86,12 @@ var mutationObserver = new MutationObserver(function(mutationRecords) {
 						$(this).parent().append('<span></span>');
 					}
 				});
+				$('td#bigtext').each(function () {
+					if ($(this).not('.marquee') && getWidth($(this).text()) > getWidth($(this))) {
+						$(this).contents().filter(function(){return this.nodeType !== 1;}).wrap('<span style="padding-left: calc(100% + ' + getWidth($(this).text()) + 'px); margin-right: -' + 2 * getWidth($(this).text()) + 'px;"></span>')
+						$(this).addClass('marquee');
+					}
+				});
 			} else if (mutationRecord.removedNodes.length > 0) {
 				//console.log('DOM node removed, do something');
 			}
@@ -87,7 +102,6 @@ var mutationObserver = new MutationObserver(function(mutationRecords) {
 		}
 	});
 });
-
 
 $(document).ready(function() {
 	mutationObserver.observe(document.body, whatToObserve);

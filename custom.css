@@ -3,7 +3,6 @@
 @import url("css/selectize.css");
 @import url("base.css");
 @import url("extras_and_animations.css");
-/*@import url("navigation_main_sidebar.css"); /* This transforms the main menu to a vertical menu on the left. */
 
 body, h1, h2, h3, h4, h5, h6, #copyright p, ul.style6 h3, .balloon, body table#itemtable tbody tr, .mobileitem .btn-mini, .brand h2, .navbar .nav .dropdown-menu, .navbar .nav li a, .navbar .nav .current_page_item > a, .obtext, .obtext2, .accordion li > a, .accordion li > a span, .btn, body table[id^="itemtable"] tbody tr, #login, #submit {
 	font-family: sans-serif !important;
@@ -651,6 +650,22 @@ body {
 	to { 
 		transform: translateX(46px);
 	}
+}
+@-webkit-keyframes MARQUEE {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+@keyframes MARQUEE {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
 }
 #notification,
 .noty_bar {
@@ -1675,10 +1690,20 @@ body div[class] table[id^="itemtable"] tr td#bigtext {
 	justify-content: end;
 	/*float: none !important;*/
 	background: none !important;
+	width: 25%;
 	max-width: 25%;
 	padding-right: 10px;
 	font-size: 14px !important;
 	margin: -1.95em 0 0 auto !important;
+}
+body div[class] table[id^="itemtable"] tr td#bigtext.marquee {
+	white-space: nowrap;
+	overflow: hidden;
+	margin-right: 10px !important;
+	padding-right: 0;
+}
+body div[class] table[id^="itemtable"] tr td#bigtext.marquee span {
+	animation: MARQUEE 5s linear infinite;
 }
 td#lastupdate:before {
 	content: "\f1da" !important;
