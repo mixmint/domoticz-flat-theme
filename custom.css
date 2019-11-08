@@ -1457,6 +1457,9 @@ td.options .btnsmall {
 td.options .btnsmall:last-child {
 	padding-left: unset;
 }
+.selectorlevels {
+	margin-top: .4em !important;
+}
 .ui-selectmenu-button.ui-button {
 	color: #fff;
 	background-color: unset;
