@@ -247,8 +247,8 @@ input[type="checkbox"]:not(.noscheck):checked + label:before,
 input[type="checkbox"][class] + span,
 input[type="checkbox"][class] + span:before,
 input[type="checkbox"][class]:checked + span:before {
-	border-radius: 9px;
-	width: 36px;
+	border-radius: 9px !important;
+	width: 36px !important;
 }
 input[type="checkbox"][class] {
 	opacity: 0;
