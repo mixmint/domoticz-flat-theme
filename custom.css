@@ -245,6 +245,7 @@ input[type="checkbox"][class] + span:after {
 input[type="checkbox"]:not(.noscheck) + label,
 input[type="checkbox"]:not(.noscheck):checked + label:before,
 input[type="checkbox"][class] + span,
+input[type="checkbox"][class] + span:before,
 input[type="checkbox"][class]:checked + span:before {
 	border-radius: 9px;
 	width: 36px;
@@ -261,7 +262,7 @@ input[type="checkbox"][class] + span:before {
 	position: absolute;
 	display: block;
 	height: 18px;
-	width: 30px;
+	width: 36px;
 	top: 0px;
 	left: 0px;
 	-moz-transition: .25s ease-in-out;
@@ -288,17 +289,22 @@ input[type="checkbox"]:not(.noscheck) + label:after,
 input[type="checkbox"]:not(.noscheck):checked + label:before,
 input[type="checkbox"][class] + span:after,
 input[type="checkbox"][class]:checked + span:before,
-tbody tr.row_selected input[type="checkbox"][class]:checked + span:before,
-tbody tr:not(.row_selected) input[type="checkbox"][class]:checked + span:after {
+tbody tr.row_selected input[type="checkbox"][class] + span:before,
+tbody tr:not(.row_selected) input[type="checkbox"][class] + span:after {
 	background: #f26b62;
 }
 input[type="checkbox"]:not(.noscheck) + label,
 input[type="checkbox"]:not(.noscheck):checked + label:after,
 input[type="checkbox"][class] + span,
 input[type="checkbox"][class]:checked + span:after,
-tbody tr.row_selected input[type="checkbox"][class] + span:before,
+tbody tr.row_selected input[type="checkbox"][class] + span:after,
 tbody tr:not(.row_selected) input[type="checkbox"][class] + span:before {
 	background: #3d4c53;
+}
+thead tr th input[type="checkbox"][class]:checked + span:before {
+	-webkit-box-shadow: inset 0px 0px 0px 1px #3d4c53;
+	-moz-box-shadow: inset 0px 0px 0px 1px #3d4c53;
+	box-shadow: inset 0px 0px 0px 1px #3d4c53;
 }
 input[type="checkbox"]:not(.noscheck) + label:after,
 input[type="checkbox"][class] + span:after {
@@ -313,10 +319,10 @@ input[type="checkbox"][class]:checked + span:after {
 input[type="checkbox"][class]:checked + span:after {
 	left: 20px;
 }
-tbody tr.row_selected input[type="checkbox"][class]:checked + span:after {
+tbody tr.row_selected input[type="checkbox"][class] + span:after {
 	left: 20px;
 }
-tbody tr:not(.row_selected) input[type="checkbox"][class]:checked + span:after {
+tbody tr:not(.row_selected) input[type="checkbox"][class] + span:after {
 	left: 2px;
 }
 input[type="radio"]:not(old) + label,
