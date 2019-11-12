@@ -1309,7 +1309,8 @@ td.options .btnsmall,
 .btnsmall:hover {
 	color: #f26b62;
 }
-.btn.btn-icon img,
+.btn.btn-icon:not(.js-toggle-state) img:not([src*="_On."]),
+.btn.btn-icon:not(.js-toggle-state) img:not([src*="_Off."]),
 .dataTable img[src*="battery"],
 .dataTable img[src*="air_signal"] {
 	display: none;
