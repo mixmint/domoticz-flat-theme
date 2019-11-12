@@ -287,13 +287,17 @@ input[type="checkbox"]:not(.noscheck) + span {
 input[type="checkbox"]:not(.noscheck) + label:after,
 input[type="checkbox"]:not(.noscheck):checked + label:before,
 input[type="checkbox"][class] + span:after,
-input[type="checkbox"][class]:checked + span:before {
+input[type="checkbox"][class]:checked + span:before,
+tbody tr.row_selected input[type="checkbox"][class]:checked + span:before,
+tbody tr:not(.row_selected) input[type="checkbox"][class]:checked + span:after {
 	background: #f26b62;
 }
 input[type="checkbox"]:not(.noscheck) + label,
 input[type="checkbox"]:not(.noscheck):checked + label:after,
 input[type="checkbox"][class] + span,
-input[type="checkbox"][class]:checked + span:after {
+input[type="checkbox"][class]:checked + span:after,
+tbody tr.row_selected input[type="checkbox"][class] + span:before,
+tbody tr:not(.row_selected) input[type="checkbox"][class] + span:before {
 	background: #3d4c53;
 }
 input[type="checkbox"]:not(.noscheck) + label:after,
@@ -308,6 +312,12 @@ input[type="checkbox"][class]:checked + span:after {
 }
 input[type="checkbox"][class]:checked + span:after {
 	left: 20px;
+}
+tbody tr.row_selected input[type="checkbox"][class]:checked + span:after {
+	left: 20px;
+}
+tbody tr:not(.row_selected) input[type="checkbox"][class]:checked + span:after {
+	left: 2px;
 }
 input[type="radio"]:not(old) + label,
 input[type="radio"]:not(old) + span {
