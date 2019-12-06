@@ -79,7 +79,8 @@ td#bigtext img[src*="arrow"] + span:before,
 .navbar .nav > li > .dropdown-menu > li > a[id]:before,
 .navbar .nav > li > .dropdown-menu > li > .dropdown-menu > li > a:before,
 .navbar .nav > li > .dropdown-menu > li > .dropdown-menu > li > a[id]:before,
-.gz-back-to-top:before {
+.gz-back-to-top:before,
+.devices-filters__group-title button i:before {
 	font-family:"FontAwesome";
 }
 #hardwarecontent > div:not(.page-header-small):not(.bannav):not(#bannav), #hardwarecontent > table:not(.page-header-small):not(.bannav):not(#bannav), #hardwarecontent #ipnodeparamstable, #nodeparamstable, #utilitycontent #notificationparamstable, #plancontent #activeparamstable, #usercontent #userparamstable, #cameracontent #activeparamstable, #hardwarecontent #hardwareparamstable, #lightcontent #paramstable:not(:nth-of-type(1)):not(:nth-of-type(2)), #scenecontent #paramstable:not(:nth-of-type(1)):not(:nth-of-type(2)), #weathercontent #notificationparamstable, #lightcontent #timerparamstable, #tempnotifications #notificationparamstable, #lightcontent #notificationparamstable, #scenecontent #timerparamstable, #notificationtable:not(.dataTable), #notifications > table, #paramstable, #fibaromain #uservariablesedittable, #customlog, #timerparamstable, #linkparamstable, #influxremote, #linkhttpparamstable, #httpremote, #linkgooglepubsubparamstable, #googlepubsubremote, #fibaromain #linkparamstable, #fibaromain #fibaroremote, #userparamstable, #activeparamstable, #lightcontent paramstable, #scenecontent #paramstable, #notificationparamstable, #hardwareparamstable, #eventparamstable, .events-editor-tree, .events-editor-file__header, .events-editor__editor, .events-editor-file__content-table {
@@ -361,6 +362,43 @@ input[type="radio"]:not(old):checked + span:after {
 .item section {
 	height: 100%;
 }
+.devices-filters label.ng-binding {
+	position: relative;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	padding-top: 4px;
+}
+.devices-filters label.ng-binding input {
+	height: 21px;
+	width: 100%;
+}
+.devices-filters__group-title {
+	background: #f26b62;
+	border: unset;
+	color:  #3d4c53;
+}
+.devices-filters__group-title button i,
+.devices-filters__group-title button:hover,
+.devices-filters__group-title button:focus,
+.devices-filters__group-title button:active {
+	background: unset !important;
+}
+.devices-filters__group-title button i:before {
+	font-style: normal;
+	color: #3d4c53;
+}
+.devices-filters__group-title button i.icon-chevron-up:before {
+	content: "\f077";
+}
+.devices-filters__group-title button i.icon-chevron-down:before {
+	content: "\f078";
+}
+.devices-filters label.ng-binding input + span {
+	margin-right: 6px;
+	margin-top: 0;
+}
 .label-info,
 .badge-info,
 .label-info[href],
@@ -617,6 +655,7 @@ a.ui-button:active,
 	align-items: flex-end;
 	padding: 0 0 0 1em;
 	margin-top: .4em;
+	margin-right: .4em;
 	margin-bottom: .4em;
 }
 .ui-dialog .ui-dialog-titlebar .ui-dialog-title {
@@ -1957,7 +1996,8 @@ td#bigtext img[src*="arrow_down"] + span:before {
 .ui-datepicker.ui-widget.ui-widget-content .ui-state-highlight,
 .ui-datepicker.ui-widget.ui-widget-content .ui-datepicker-current-day.ui-datepicker-today a.ui-state-hover,
 .ui-datepicker .ui-widget-header .ui-datepicker-prev.ui-datepicker-prev-hover:before,
-.ui-datepicker .ui-widget-header .ui-datepicker-next.ui-datepicker-next-hover:before {
+.ui-datepicker .ui-widget-header .ui-datepicker-next.ui-datepicker-next-hover:before,
+.events-editor-tree-item_active .events-editor-tree-item__file:link {
 	color: #f26b62;
 }
 .ui-dialog.ui-widget.ui-widget-content,
@@ -1990,9 +2030,11 @@ div.events-editor-file__content {
 	border-bottom: none;
 	border-left: none;
 }
-.events-editor__file:hover {
+.events-editor__file:hover,
+.events-editor-tree-item_active .events-editor-tree-item__file:link:hover {
 	cursor: pointer;
 }
+
 .blocklySvg,
 .blocklyMainBackground {
 	background-color: transparent;

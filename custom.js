@@ -33,6 +33,11 @@ var mutationObserver = new MutationObserver(function(mutationRecords) {
 						$('#devicecontainer').contents().filter(function(){return this.nodeType !== 1;}).wrap('<span></span>');
 					}
 				});
+				$('.devices-filters__item-list > .devices-filters__item > label > input[type="checkbox"]').each(function () {
+					if ($(this).next('span').length === 0) {
+						$('<span></span>').insertAfter($(this));
+					}
+				});
 				$('img[src*="/next."]').each(function () {
 					if ($(this).next('i').length === 0) {
 						$(this).closest('td').addClass('icon');
