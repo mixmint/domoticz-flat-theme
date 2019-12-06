@@ -80,7 +80,8 @@ td#bigtext img[src*="arrow"] + span:before,
 .navbar .nav > li > .dropdown-menu > li > .dropdown-menu > li > a:before,
 .navbar .nav > li > .dropdown-menu > li > .dropdown-menu > li > a[id]:before,
 .gz-back-to-top:before,
-.devices-filters__group-title button i:before {
+.devices-filters__group-title button i:before,
+.page-devices button.splitter i:before {
 	font-family:"FontAwesome";
 }
 #hardwarecontent > div:not(.page-header-small):not(.bannav):not(#bannav), #hardwarecontent > table:not(.page-header-small):not(.bannav):not(#bannav), #hardwarecontent #ipnodeparamstable, #nodeparamstable, #utilitycontent #notificationparamstable, #plancontent #activeparamstable, #usercontent #userparamstable, #cameracontent #activeparamstable, #hardwarecontent #hardwareparamstable, #lightcontent #paramstable:not(:nth-of-type(1)):not(:nth-of-type(2)), #scenecontent #paramstable:not(:nth-of-type(1)):not(:nth-of-type(2)), #weathercontent #notificationparamstable, #lightcontent #timerparamstable, #tempnotifications #notificationparamstable, #lightcontent #notificationparamstable, #scenecontent #timerparamstable, #notificationtable:not(.dataTable), #notifications > table, #paramstable, #fibaromain #uservariablesedittable, #customlog, #timerparamstable, #linkparamstable, #influxremote, #linkhttpparamstable, #httpremote, #linkgooglepubsubparamstable, #googlepubsubremote, #fibaromain #linkparamstable, #fibaromain #fibaroremote, #userparamstable, #activeparamstable, #lightcontent paramstable, #scenecontent #paramstable, #notificationparamstable, #hardwareparamstable, #eventparamstable, .events-editor-tree, .events-editor-file__header, .events-editor__editor, .events-editor-file__content-table {
@@ -380,20 +381,43 @@ input[type="radio"]:not(old):checked + span:after {
 	color:  #3d4c53;
 }
 .devices-filters__group-title button i,
+.page-devices button.splitter i,
 .devices-filters__group-title button:hover,
 .devices-filters__group-title button:focus,
 .devices-filters__group-title button:active {
 	background: unset !important;
 }
-.devices-filters__group-title button i:before {
+.devices-filters__group-title button i:before,
+.page-devices button.splitter i:before {
 	font-style: normal;
+}
+.devices-filters__group-title button i:before {
 	color: #3d4c53;
+}
+.page-devices button.splitter i:before {
+	color: #f26b62;
+}
+.page-devices button.splitter:hover i:before {
+	color: #3d4c53;
+}
+section.page-devices button.splitter {
+	background-color: #3d4c53;
+	border-radius: unset;
+}
+section.page-devices button.splitter:hover {
+	background-color: #f26b62;
 }
 .devices-filters__group-title button i.icon-chevron-up:before {
 	content: "\f077";
 }
 .devices-filters__group-title button i.icon-chevron-down:before {
 	content: "\f078";
+}
+.page-devices button.splitter i.icon-chevron-left:before {
+	content: "\f053";
+}
+.page-devices button.splitter i.icon-chevron-right:before {
+	content: "\f054";
 }
 .devices-filters label.ng-binding input + span {
 	margin-right: 6px;
@@ -980,6 +1004,10 @@ ul.nav-tabs > li > a:hover {
 }
 ul.nav-tabs > li > a:hover {
 	background: none;
+}
+.page-devices > .filters,
+.page-devices > .splitter {
+	margin-top: 5px;
 }
 .dataTables_wrapper .ui-toolbar {
 	padding: 5px 0;
