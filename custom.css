@@ -1705,6 +1705,7 @@ body table[id^="itemtable"] > tbody > tr:hover {
 body table[id^="itemtable"] tr > *:not(.options) {
 	overflow: hidden;
 	white-space: nowrap;
+	line-height: normal !important;
 }
 body table#itemtablesmall tr td:first-child,
 body table#itemtablesmall tr td:first-child + td {
