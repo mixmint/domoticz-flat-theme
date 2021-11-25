@@ -4,7 +4,8 @@
 <h2>Installing</h2>
 <p>On your Raspberry Pi, go into the Domoticz directory via the terminal:</p>
 <ul>
-<li>cd domoticz/www/styles git clone <a href="https://github.com/mixmint/domoticz-flat-theme.git">https://github.com/mixmint/domoticz-flat-theme.git</a></li>
+  <li>cd domoticz/www/styles</li>
+  <li>git clone <a href="https://github.com/mixmint/domoticz-flat-theme.git">https://github.com/mixmint/domoticz-flat-theme.git</a></li>
 <li>sudo /etc/init.d/domoticz.sh restart</li>
 </ul>
 <h2>Updating</h2>
